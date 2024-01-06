@@ -1,28 +1,30 @@
 import "./App.css"
 import React from "react";
-import {Col, Container, Row} from "react-bootstrap";
-import {Route, Routes} from "react-router-dom";
+import {Container} from "react-bootstrap";
 import Header from "./Header";
 import Home from "./Home";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="body">
-    <Container>
-      <Row className="justify-content-center text-center">
-        <Col>
-          <Header />
-        </Col>
-      </Row>
-      <Row className="justify-content-center text-center">
-        <Col>
-          <Routes>
-            <Route path="*" element={<Home/>}/>
-          </Routes>
-        </Col>
-      </Row>
+    <>
+    <Container fluid className="text-center">
+      <Header />
     </Container>
-    </div>
+      <Container fluid>
+        <Home />
+      </Container>
+      {/*<Row className="justify-content-center text-center">*/}
+      {/*  <Col>*/}
+      {/*    <Routes>*/}
+      {/*      <Route path="*" element={<Home/>}/>*/}
+      {/*    </Routes>*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
+      <Container fluid className="justify-content-center text-center">
+        <Footer />
+      </Container>
+    </>
   )
 }
 
